@@ -18,7 +18,7 @@ def is_gibberish(text): # 检测是否包含非ASCII字符, 判断读取excel编
     return any(ord(char) > 127 for char in text)
 
 @st.cache_data
-def read_excel_file(file):
+def read_excel_file(file, **kwargs):
     try:
         file_extension = file.name.split('.')[-1]
         if file_extension == 'csv':
@@ -30,9 +30,9 @@ def read_excel_file(file):
             detector.close()
             encoding = detector.result['encoding']
             file.seek(0)
-            df = pd.read_csv(file, encoding=encoding)
+            df = pd.read_csv(file, encoding=encoding, **kwargs)
         elif file_extension in ['xlsx', 'xls']:
-            df = pd.read_excel(file)
+            df = pd.read_excel(file, **kwargs)
         else:
             st.warning(f"不支持的文件格式: {file.name}")
             return None
