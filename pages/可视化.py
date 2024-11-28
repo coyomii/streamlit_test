@@ -5,13 +5,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import streamlit as st
-from matplotlib import font_manager
 
 from utils.common_utils import *
 
-# 临时注册新的全局字体
-font_manager.fontManager.addfont(r'fonts\SimHei.ttf')
-plt.rcParams['font.sans-serif']=['SimHei'] # 测试Linux正常显示中文标签
+plt.rcParams['font.sans-serif']=['SimHei'] # 用黑体显示中文
 plt.rcParams['axes.unicode_minus']=False # 正常显示负号
 
 
