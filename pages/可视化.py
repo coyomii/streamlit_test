@@ -8,7 +8,7 @@ import streamlit as st
 
 from utils.common_utils import *
 
-plt.rcParams['font.sans-serif']=['SimHei'] # 用黑体显示中文
+plt.rcParams['font.sans-serif']=['Microsoft YaHei'] # 测试Linux正常显示中文标签
 plt.rcParams['axes.unicode_minus']=False # 正常显示负号
 
 
